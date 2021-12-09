@@ -1,0 +1,23 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.icon_wrapper {
+  margin-right: 1rem;
+  .icon {
+    width: 42px;
+    height: 42px;
+    // image-rendering: pixelated;
+  }
+}
+.title {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+.subtitle {
+  font-size: 0.7rem;
+  opacity: 0.6;
+}

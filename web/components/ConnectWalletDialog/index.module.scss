@@ -1,0 +1,33 @@
+.main {
+  text-align: center;
+  position: fixed;
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  margin-top: -20%;
+  transform: translate(-50%, -0%);
+  text-align: left;
+  padding: 1rem !important;
+}
+
+.title {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.wallet {
+  margin-bottom: 1.4rem;
+  display: block;
+  width: 100%;
+}

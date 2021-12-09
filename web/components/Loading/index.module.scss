@@ -1,0 +1,23 @@
+.loading_wrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.show {
+  display: block;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fff;
+  width: 100%;
+}

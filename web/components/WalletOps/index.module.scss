@@ -1,0 +1,27 @@
+.grid {
+  display: flex;
+  position: relative;
+  button {
+    flex: 1;
+    margin: 0.5rem;
+  }
+}
+.expand {
+  flex: 0 !important;
+}
+
+.expand_btn_bg {
+  position: absolute;
+  height: 80px;
+  width: 56px;
+  content: " ";
+  display: block;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.expand_btn_bg_expand {
+  background-color: #e8e8e8;
+}

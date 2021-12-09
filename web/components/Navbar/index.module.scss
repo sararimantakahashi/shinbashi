@@ -1,0 +1,36 @@
+.nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 0;
+  width: 100%;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.can {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  visibility: hidden;
+}
+
+.toggle_btn_wrapper {
+  display: none;
+  flex: 0;
+}
+
+@media (max-width: 768px) {
+  .toggle_btn_wrapper {
+    display: flex;
+  }
+  .logo {
+    visibility: visible;
+  }
+}

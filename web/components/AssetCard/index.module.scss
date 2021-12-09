@@ -1,0 +1,25 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  margin-top: 1rem;
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.icon_wrapper {
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.balance {
+  font-size: 1rem;
+  margin-bottom: 0.1rem;
+}
+
+.fiat {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}

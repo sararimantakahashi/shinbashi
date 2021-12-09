@@ -1,0 +1,17 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  text-align: left;
+}
+
+.balance {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  margin-bottom: 0.5rem;
+}

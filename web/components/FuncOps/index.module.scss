@@ -1,0 +1,26 @@
+.wrapper {
+  background-color: #e8e8e8;
+  margin: 0.5rem 0;
+}
+.grid {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
+  flex-wrap: wrap;
+  button {
+    flex: 1 !important;
+    margin: 0.5rem;
+    min-width: 40%;
+  }
+  &:last-child {
+    padding-bottom: 1rem;
+  }
+}
+.title {
+  font-size: 0.7rem;
+  margin: 0.4rem;
+}
+.hint {
+  margin: 0 0.4rem;
+  opacity: 0.7;
+}

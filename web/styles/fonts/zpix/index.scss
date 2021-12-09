@@ -1,0 +1,11 @@
+/* cyrillic-ext */
+@font-face {
+  font-family: "zpix";
+  font-style: normal;
+  font-weight: 400;
+  size-adjust: 120%;
+  vertical-align: baseline;
+  transform: translateY(-10px);
+  // font-display: swap;
+  src: url(./zpix.woff2) format("woff2");
+}

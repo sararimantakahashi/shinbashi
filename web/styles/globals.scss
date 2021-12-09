@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import "~/node_modules/nes.css/css/nes.css";
+@import "./fonts/nukinako/index.scss";
+@import "./fonts/zpix/index.scss";
+@import "./icons.scss";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Press Start 2P", "zpix", "NuKinako", "SF Pro Text",
+    "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+body {
+  padding: 0rem;
+  // max-width: 680px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+// a {
+//   color: inherit;
+//   text-decoration: none;
+// }
+
+a:hover {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page-container {
+  // min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  overflow: auto;
+}
+
+.page-main {
+  padding: 0;
+  // flex: 1;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-content {
+  padding: 1rem 0;
+  width: 100%;
+  max-width: 660px;
+}
+
+.nes-dialog {
+  border: 4px solid #000;
+  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(33,37,41)" /></svg>');
+  border-image-slice: 2;
+  border-image-width: 2;
+  border-image-outset: 2;
+}
+
+.react-select-wrapper {
+  position: relative;
+  width: -webkit-calc(100% - 8px);
+  width: calc(100% - 8px);
+  margin: 4px;
+  margin-left: 4px;
+}
+
+.row {
+  margin-bottom: 1rem;
+}
+
+.nes-btn.block {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-1 {
+  margin-bottom: 0.4rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.8rem;
+}
+
+.mb-3 {
+  margin-bottom: 1.2rem;
+}
+
+.mb-4 {
+  margin-bottom: 1.6rem;
+}
+
+.modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  word-break: break-all;
+  z-index: 9999;
+}
+
+.modal-main {
+  text-align: center;
+  position: fixed;
+  background: white;
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  text-align: left;
+  border: 4px solid #000;
+  z-index: 11;
+}
+
+.modal-title {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.modal-show {
+  display: block;
+}
+
+.modal-hide {
+  display: none;
+}
+
+.modal-ok {
+  margin-bottom: 1.4rem;
+  display: block;
+  width: 100%;
+}
