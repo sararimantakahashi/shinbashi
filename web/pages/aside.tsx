@@ -93,6 +93,9 @@ const Aside = ({ router, toggled, handleToggleSidebar }:{router:any, toggled:any
           <a href="https://www.reddit.com/r/shinbashi/" target="_blank">
             <i className="nes-icon reddit"></i>
           </a>
+          <a href="https://github.com/sararimantakahashi/shinbashi" target="_blank">
+            <i className="nes-icon github"></i>
+          </a>
         </div>
       </SidebarFooter>
     </ProSidebar>
