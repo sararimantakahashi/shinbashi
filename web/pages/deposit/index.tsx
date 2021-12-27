@@ -27,6 +27,7 @@ const Deposit: NextPage = () => {
   const {
     ethAddress,
     assets,
+    setLoading
   } = useAppContext();
 
   const [selectedAsset, setSelectedAsset] = useState<any>(null);
@@ -34,7 +35,6 @@ const Deposit: NextPage = () => {
   const [supportedAssets, setSupportedAssets] = useState<any>([]);
   const [addrAssets, setAddrAssets] = useState<any>([]);
   const [amount, setAmount] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false);
 
   const web3 = utils.getWeb3();
 
@@ -296,7 +296,6 @@ const Deposit: NextPage = () => {
       <MetaHead title={ t('deposit') } description="Deposit to Shinbashi" />
 
       <main className="page-main">
-        <Loading loading={loading} />
 
         <Navbar />
 

@@ -10,7 +10,7 @@ import { v4 as uuid } from "uuid";
 import Select from 'react-select';
 
 import utils from '../../utils';
-import { MetaHead, Navbar, Tabs, Loading,
+import { MetaHead, Navbar, Tabs,
   AddLiquidityResultDialog,
   RemoveLiquidityResultDialog
 } from '../../components';
@@ -30,6 +30,7 @@ const LiquidityManagementPage: NextPage = () => {
 
   const {
     assets,
+    setLoading,
   } = useAppContext();
 
   const cacheCtx = useCacheContext();
@@ -47,7 +48,7 @@ const LiquidityManagementPage: NextPage = () => {
   const [addAmount1, setAddAmount1] = useState<string>("");
   const [addAmount2, setAddAmount2] = useState<string>("");
   const [removeAmount, setRemoveAmount] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false);
+  // const [loading, setLoading] = useState<boolean>(false);
   const [showAddLiquidityResultDialog, setShowAddLiquidityResultDialog] = useState<boolean>(false);
   const [showRemoveLiquidityResultDialog, setShowRemoveLiquidityResultDialog] = useState<boolean>(false);
 
@@ -97,6 +98,7 @@ const LiquidityManagementPage: NextPage = () => {
       setLoading(false);
     }
 
+    setLoading(true);
     refresh();
   }, []);
 
@@ -526,7 +528,6 @@ const LiquidityManagementPage: NextPage = () => {
       <MetaHead title={ t('liquidity') } description="Liquidity management" />
 
       <main className="page-main">
-        <Loading loading={loading}/>
 
         <Navbar />
 

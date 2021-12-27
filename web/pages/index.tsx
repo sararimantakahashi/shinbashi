@@ -40,12 +40,12 @@ const Home: NextPage = () => {
   const {
     assets,
     web3, setWeb3,
-    loadAssets
+    loadAssets,
+    setLoading,
   } = useAppContext();
 
   const [showConnectDialog, setShowConnectDialog] = useState(false);
 
-  const [loading, setLoading] = useState(false);
 
   const [totalFiatBalance, setTotalFiatBalance] = useState('0.00');
 
@@ -79,7 +79,7 @@ const Home: NextPage = () => {
       .then(() => setConnected(true) )
       .catch(e => w.__WEB3_CONNECT_ERROR__ = e.toString());
 
-    w.ethereum.enable();
+    // w.ethereum.enable();
     await w.ethereum.send('eth_requestAccounts')
     await setWeb3(web3);
 
@@ -97,7 +97,6 @@ const Home: NextPage = () => {
 
     const kp = utils.encrypt.generateKeypair(sig);
     await setKeypair(kp);
-
 
     // register and fetch user data
     const client = new HTTP(AccessEndpoint, null, {});
@@ -125,6 +124,17 @@ const Home: NextPage = () => {
     setShowConnectDialog(false);
   }
 
+  const unlockWallet = async () => {
+    const w = window as any;
+    try {
+      await w.ethereum.send('eth_requestAccounts')
+    } catch (e) {
+      console.log(e.code, e.message);
+      if (e.code === -32002) {
+        window.location.reload();
+      }
+    }
+  }
 
   const initAccount = async (name:string) => {
     setLoading(true);
@@ -162,10 +172,11 @@ const Home: NextPage = () => {
     return id
   }
 
+
   let renderContent = (
     <div>
       <Intro />
-      <ConnectWalletArea onConnect={openConnectDialog} />
+      <ConnectWalletArea onConnect={openConnectDialog} onUnlock={unlockWallet}/>
     </div>
   );
 
@@ -193,7 +204,6 @@ const Home: NextPage = () => {
       <MetaHead />
 
       <main className="page-main">
-        <Loading loading={loading}/>
 
         <Navbar />
 

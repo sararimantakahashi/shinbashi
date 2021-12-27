@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 
 import Aside from './aside';
 import Modals from './modals';
+import Loading from './loading';
 import styles from '../styles/layout.module.scss';
 
 import { useAppContext } from '../context';
@@ -22,6 +23,7 @@ const Layout = ({content}:{content:any}) => {
       <Aside toggled={sidebarOpen} handleToggleSidebar={handleToggleSidebar}/>
       {content}
       <Modals />
+      <Loading />
     </div>
   )
 }

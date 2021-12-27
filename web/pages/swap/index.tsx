@@ -9,7 +9,7 @@ import { v4 as uuid } from "uuid";
 import _ from 'lodash';
 import { useTranslation } from 'next-i18next';
 
-import { Navbar, Loading, SwapResultDialog } from '../../components';
+import { Navbar, SwapResultDialog } from '../../components';
 import utils from '../../utils';
 import { useAppContext, useAuthContext, useCacheContext, useApiContext } from '../../context';
 import Select from 'react-select';
@@ -28,6 +28,7 @@ const Swap: NextPage = () => {
 
   const {
     assets,
+    setLoading
   } = useAppContext();
 
   const cacheCtx = useCacheContext();
@@ -45,7 +46,7 @@ const Swap: NextPage = () => {
   const [priceImpact, setPriceImpact] = useState<string>("");
   const [priceImpactStyle, setPriceImpactStyle] = useState<string>("");
 
-  const [loading, setLoading] = useState<boolean>(false);
+  // const [loading, setLoading] = useState<boolean>(false);
 
   const [showSwapResultDialog, setShowSwapResultDialog] = useState<boolean>(false);
   const [swapResult, setSwapResult] = useState<boolean>(false);
@@ -294,7 +295,6 @@ const Swap: NextPage = () => {
 
   return (
     <div className="page-container">
-      <Loading loading={loading} />
       <Head>
         <title>Shinbashi - {t('swap')} </title>
         <meta name="description" content="Deposit to Shinbashi" />

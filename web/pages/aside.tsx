@@ -17,25 +17,29 @@ import styles from '../styles/aside.module.scss';
 
 import i18next from 'i18next';
 import { useTranslation } from 'next-i18next';
-import { useAuthContext } from '../context';
+import { useAuthContext, useAppContext } from '../context';
 import { useEffect } from 'react';
 
 const Aside = ({ router, toggled, handleToggleSidebar }:{router:any, toggled:any, handleToggleSidebar:any}) => {
   const { t } = useTranslation('common');
 
   const authContext = useAuthContext();
+  const appCtx = useAppContext();
   const {
     connected, accountState
   } = authContext;
 
   const wallet = async () => {
+    appCtx.setLoading(true);
     router.push({
       pathname: '/',
     });
     handleToggleSidebar();
+    appCtx.setLoading(false);
   }
 
   const swap = async () => {
+    appCtx.setLoading(true);
     router.push({
       pathname: '/swap',
     });
@@ -43,6 +47,7 @@ const Aside = ({ router, toggled, handleToggleSidebar }:{router:any, toggled:any
   }
 
   const liquidity = async () => {
+    appCtx.setLoading(true);
     router.push({
       pathname: '/liquidity',
     });

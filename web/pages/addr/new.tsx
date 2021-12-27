@@ -6,7 +6,7 @@ import { useTranslation } from 'next-i18next';
 
 import { MetaHead, Navbar, Loading } from '../../components';
 import { getAPI } from '../../api';
-import { useApiContext, useAuthContext } from '../../context';
+import { useApiContext, useAppContext, useAuthContext } from '../../context';
 import utils from '../../utils'
 
 const AddrIndex = ({ router }: { router:any }) => {
@@ -19,11 +19,11 @@ const AddrIndex = ({ router }: { router:any }) => {
   } = useAuthContext();
 
   const apiCtx = useApiContext();
+  const { setLoading } = useAppContext();
 
   const [label, setLabel] = useState<any>('');
   const [destination, setDestination] = useState<any>('');
   const [tag, setTag] = useState<any>('');
-  const [loading, setLoading] = useState<boolean>(false);
 
   const assetId = router.query.asset as string
 
@@ -70,7 +70,6 @@ const AddrIndex = ({ router }: { router:any }) => {
       <MetaHead title="Addresses"></MetaHead>
 
       <main className="page-main">
-        <Loading loading={loading}/>
 
         <Navbar />
         <div className="page-content">

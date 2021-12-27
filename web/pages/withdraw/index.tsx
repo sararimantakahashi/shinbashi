@@ -10,7 +10,7 @@ import { useTranslation } from 'next-i18next';
 import _ from 'lodash';
 
 import utils from '../../utils';
-import { Navbar, Loading, WithdrawResultDialog } from '../../components';
+import { Navbar, WithdrawResultDialog } from '../../components';
 import { getAPI } from '../../api';
 import { useApiContext, useAppContext, useAuthContext, useCacheContext } from '../../context';
 import Select from 'react-select';
@@ -28,7 +28,8 @@ const Withdraw = ({router}: {router:any}) => {
   } = useAuthContext();
 
   const {
-    assets
+    assets,
+    setLoading
   } = useAppContext();
 
   const {
@@ -39,7 +40,6 @@ const Withdraw = ({router}: {router:any}) => {
   const [supportedAssets, setSupportedAssets] = useState<any>([]);
   const [selectedAddress, setSelectedAddress] = useState<any>(null);
   const [amount, setAmount] = useState<any>(0);
-  const [loading, setLoading] = useState<boolean>(false);
   const [showWithdrawResultDialog, setShowWithdrawResultDialog] = useState<boolean>(false);
 
   const web3 = utils.getWeb3();
@@ -49,7 +49,6 @@ const Withdraw = ({router}: {router:any}) => {
       return ;
     }
     const refresh = async () => {
-      setLoading(true);
       const sorted = utils.tools.filteredAssets(assets);
 
       setSupportedAssets(sorted);
@@ -63,6 +62,8 @@ const Withdraw = ({router}: {router:any}) => {
       }
       setLoading(false);
     }
+    setLoading(true);
+
     refresh();
   }, []);
 
@@ -204,7 +205,6 @@ const Withdraw = ({router}: {router:any}) => {
       </Head>
 
       <main className="page-main">
-        <Loading loading={loading} />
         <Navbar />
 
         <div className="page-content">

@@ -23,6 +23,9 @@ type appContextType = {
   setSidebarOpen: (val:any) => void;
 
   loadAssets: (apiAlt:any) => void;
+
+  loading: boolean;
+  setLoading: (val:any) => void;
 };
 
 const contextDefaultValues: appContextType = {
@@ -37,6 +40,9 @@ const contextDefaultValues: appContextType = {
   setSidebarOpen: () => {},
 
   loadAssets: () => {},
+
+  loading: false,
+  setLoading: () => {},
 };
 
 const AppContext = createContext(contextDefaultValues);
@@ -50,6 +56,8 @@ export function AppProvider({ children }:Props) {
   const [web3, setWeb3] = useState<any>(null);
   const [ethAddress, setEthAddress] = useState<string>('');
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
+
+  const [loading, setLoading] = useState<boolean>(false);
 
   const loadAssets = async (apiAlt:any) => {
     const resp = await (apiContext.api || apiAlt).assets();
@@ -86,6 +94,7 @@ export function AppProvider({ children }:Props) {
     ethAddress, setEthAddress,
     sidebarOpen, setSidebarOpen,
     loadAssets,
+    loading, setLoading,
   }
 
   return (
