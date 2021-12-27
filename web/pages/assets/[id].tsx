@@ -45,7 +45,7 @@ const Asset: NextPage = () => {
 
   const api = new API(client);
 
-  const web3 = utils.getWeb3();
+  const web3:any = utils.getWeb3();
 
   const fetchSnapshots = async () => {
     const resp:any = await apiCtx.api.snapshots(assetId);

@@ -24,7 +24,7 @@ const ConnectWalletArea = ({ onConnect, onUnlock }:{ onConnect:any, onUnlock:any
   }
 
   useEffect(() => {
-    const web3 = utils.getWeb3();
+    const web3:any = utils.getWeb3();
     if (web3) {
       checkUnlockedStatus(web3);
     }

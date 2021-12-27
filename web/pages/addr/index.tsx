@@ -39,7 +39,7 @@ const AddrIndex = ({ router }: { router:any }) => {
 
   const assetId = router.query.asset as string;
 
-  const web3 = utils.getWeb3();
+  const web3:any = utils.getWeb3();
 
   const refresh = async () => {
     // read addresses

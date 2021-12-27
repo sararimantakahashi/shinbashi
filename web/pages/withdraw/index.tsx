@@ -42,7 +42,7 @@ const Withdraw = ({router}: {router:any}) => {
   const [amount, setAmount] = useState<any>(0);
   const [showWithdrawResultDialog, setShowWithdrawResultDialog] = useState<boolean>(false);
 
-  const web3 = utils.getWeb3();
+  const web3:any = utils.getWeb3();
 
   useEffect(() => {
     if (utils.tools.loginRequired(router, user)) {

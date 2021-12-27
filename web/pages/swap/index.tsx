@@ -182,7 +182,7 @@ const Swap: NextPage = () => {
 
     const traceId = uuid()
     const followId = uuid()
-    const web3 = utils.getWeb3();
+    const web3:any = utils.getWeb3();
 
     const encryptedPIN = await utils.encrypt.generateEncryptedPIN(
       web3,

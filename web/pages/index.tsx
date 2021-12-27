@@ -73,11 +73,15 @@ const Home: NextPage = () => {
   const sign = async () => {
     setLoading(true);
     const w = window as any;
-    const web3 = utils.getWeb3();
+    const web3:any = utils.getWeb3();
+
+    if (web3 === null) {
+      return
+    }
 
     web3.eth.net.isListening()
       .then(() => setConnected(true) )
-      .catch(e => w.__WEB3_CONNECT_ERROR__ = e.toString());
+      .catch((e:any) => w.__WEB3_CONNECT_ERROR__ = e.toString());
 
     // w.ethereum.enable();
     await w.ethereum.send('eth_requestAccounts')

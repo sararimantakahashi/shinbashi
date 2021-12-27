@@ -52,7 +52,7 @@ const LiquidityManagementPage: NextPage = () => {
   const [showAddLiquidityResultDialog, setShowAddLiquidityResultDialog] = useState<boolean>(false);
   const [showRemoveLiquidityResultDialog, setShowRemoveLiquidityResultDialog] = useState<boolean>(false);
 
-  const web3 = utils.getWeb3();
+  const web3:any = utils.getWeb3();
 
   const tabItems = [
     { label: t('liquidity.add'), value: 'add', content: <div>{t('liquidity.add')}</div> },

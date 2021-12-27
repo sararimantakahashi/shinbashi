@@ -22,8 +22,11 @@ const detectSupportWallets = () => {
 
 const getWeb3 = () => {
   const w = (window as any);
-  const web3 = new Web3(w.web3.currentProvider);
-  return web3;
+  if (w.web3 && w.web3.currentProvider) {
+    const web3 = new Web3(w.web3.currentProvider);
+    return web3
+  }
+  return null;
 }
 
 export default {

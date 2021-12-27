@@ -36,7 +36,7 @@ const Deposit: NextPage = () => {
   const [addrAssets, setAddrAssets] = useState<any>([]);
   const [amount, setAmount] = useState<string>("");
 
-  const web3 = utils.getWeb3();
+  const web3:any = utils.getWeb3();
 
   const tabItems = [
     { label: t('metamask'), value: 'metamask', content: <div>{t('metamask')}</div> },
