@@ -19,7 +19,9 @@
 
   "initialize_account": "アカウントを初期化する",
 
-  "connect_wallet": "ウォレットを接続する ",
+  "unlock_wallet": "ウォレットのロックを解除",
+
+  "connect_wallet": "ウォレットを接続する",
   "connect_wallet.no_wallet_hint": "ウォレットを持っていません",
   "connect_wallet.download": "ウォレットをダウンロードする ",
 

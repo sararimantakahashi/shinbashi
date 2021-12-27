@@ -19,6 +19,8 @@
 
   "initialize_account": "Initialize Wallet",
 
+  "unlock_wallet": "Unlock Wallet",
+
   "connect_wallet": "Connect Wallet",
   "connect_wallet.no_wallet_hint": "You don't have a wallet yet.",
   "connect_wallet.download": "Download Wallets",
