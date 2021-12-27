@@ -128,8 +128,7 @@ const Home: NextPage = () => {
     const w = window as any;
     try {
       await w.ethereum.send('eth_requestAccounts')
-    } catch (e) {
-      console.log(e.code, e.message);
+    } catch (e:any) {
       if (e.code === -32002) {
         window.location.reload();
       }
